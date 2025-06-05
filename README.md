@@ -130,3 +130,7 @@ Desenvolvido por [Isaac](https://github.com/zacks08) 🚀
 ---
 
 > _Sinta-se à vontade para contribuir, sugerir melhorias ou reportar issues!_
+
+
+
+© 2025 GitHub Copilot. Este README foi gerado com o auxílio da inteligência artificial GitHub Copilot para fins educacionais e profissionais.

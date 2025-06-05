@@ -16,6 +16,7 @@ app.post('/produtos', async (req, res) => {
         nome: req.body.nome,
         quantidade: req.body.quantidade,
         descriçao: req.body.descriçao,
+        id: req.body.id, // Adicionando o campo id 
       },
     });
     res.status(201).json(produto);
@@ -78,13 +79,30 @@ app.put('/produtos/:id', async (req, res) => {
 app.delete('/produtos/:id', async (req, res) => {
   try {
     const produto = await prisma.produto.delete({
-      where: { id: req.params.id },
+      where: { id: req.params.id },r o produto' });
     });
     res.status(200).json({ message: 'Produto deletado com sucesso', produto });
   } catch (error) {
-    res.status(500).json({ error: 'Erro ao deletar o produto' });
+    res.status(500).json({ error: 'Erro ao deleta
   }
 });
+
+// Deletar todos os produtos forma temporária
+// (Cuidado: isso irá remover todos os produtos do banco de dados)
+
+
+/*app.delete('/produtos', async (req, res) => {
+  try {
+    await prisma.produto.deleteMany({});
+    res.status(200).json({ message: 'Todos os produtos foram deletados com sucesso' });
+  } catch (error) {
+    res.status(500).json({ error: 'Erro ao deletar todos os produtos' });
+  }
+});*/
+
+
+
+
 
 app.listen(3001, () => {
   console.log('Servidor rodando na porta 3001');
@@ -99,6 +117,8 @@ Criar api de produtos
     listar produtos
     listar produto    
     deletar produto 
+    deletar todos os produtos
+    criar produto
     atualizar produto
    
 

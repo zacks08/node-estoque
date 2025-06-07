@@ -79,11 +79,11 @@ app.put('/produtos/:id', async (req, res) => {
 app.delete('/produtos/:id', async (req, res) => {
   try {
     const produto = await prisma.produto.delete({
-      where: { id: req.params.id },r o produto' });
+      where: { id: req.params.id },
     });
     res.status(200).json({ message: 'Produto deletado com sucesso', produto });
   } catch (error) {
-    res.status(500).json({ error: 'Erro ao deleta
+    res.status(500).json({ error: 'Erro ao deletar produto' });
   }
 });
 
